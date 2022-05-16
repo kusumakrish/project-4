@@ -74,21 +74,21 @@ function alarm(){
 
         //afternoon display
         if(lunchValue==hourValue){
-            message.textContent="GOOD AFTERNOON ! TAKE A SIESTA !";
-            alarmMessage.textContent="GOOD AFTERNOON !"   
+            message.textContent="LET'S HAVING SOME LUNCH!!";
+            alarmMessage.textContent="GOOD AFTERNOON !TAKE SOME SLEEP"   
             messageImage.style.cssText="background-image:url('afternoon.png')"
         }
 
         //evening display
         if(napValue==hourValue){
-            message.textContent="LET'S GRAB A CUP OF COFFEE !";
+            message.textContent="STOP YAWNING HAVE SOME TEA... IT JUST EVENING !";
             alarmMessage.textContent="GOOD EVENING !"   
             messageImage.style.cssText="background-image:url(lunch.png);"
         }
 
         //night display
         if(nightValue==hourValue){
-            message.textContent="SWEET DREAMS !";
+            message.textContent="CLOSE YOUR EYES AND GO TO SLEEP !";
             alarmMessage.textContent="GOOD NIGHT !"   
             messageImage.style.cssText="background-image:url(night.png);"
         }
