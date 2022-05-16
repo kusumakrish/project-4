@@ -1,0 +1,429 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Bah;
+}
+body{
+    background-color:#3D087B;
+}
+@font-face{
+    font-family:Bah;
+    src:url("../fonts/BauhausRegular.ttf");
+}
+.parent-wrapper{
+    width:85%;
+    margin:3% auto;
+    display:flex;
+    justify-content:space-between;
+}
+/*Left half webpage's designing starts here*/
+.parent-wrapper .child-wrapper-one{
+    width:49%;
+}
+.parent-wrapper .child-wrapper-one .main-logo{
+    width:50%;
+    padding:11%;
+    background-image:url("clock_logo.png");
+    background-repeat:no-repeat;
+    background-position:center;
+}
+.parent-wrapper .child-wrapper-one .selectors{
+    width:90%;
+    background-color:white;
+    margin:0 auto;
+    padding:3%;
+    border-radius:20px;
+}
+.parent-wrapper .child-wrapper-one .selectors .first-dropdown-wrapper{
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+    font-size:20px;
+    font-weight:bolder;
+    margin-bottom:7%;
+    color:#3D087B;
+}
+.parent-wrapper .child-wrapper-one .selectors .first-dropdown-wrapper select{
+    width:35%;
+}
+.parent-wrapper .child-wrapper-one .selectors hr{
+    width:10%;
+    border:1px solid black;
+    margin-bottom:7%;
+    transform:rotate(90deg);
+    position:relative;
+    left:4%;
+}
+.parent-wrapper .child-wrapper-one .message{
+    width:90%;
+    padding:7%;
+    background-color:#7516e0;
+    margin:5% auto;
+    border-radius:20px;
+    color:#fab4ff;
+    font-weight:bolder;
+    font-size:25px;
+}
+.parent-wrapper .child-wrapper-one .footer-left{
+    width:95%;
+    margin:4% auto;
+    display:flex;
+    justify-content: space-around;
+    align-items:center;
+    padding:3%;
+}
+.parent-wrapper .child-wrapper-one .footer-left #alarm-butn{
+    width:40%;
+    padding:2%;
+    font-size:25px;
+    font-weight:bolder;
+    letter-spacing:1px;
+    color:white;
+    background-image:linear-gradient(113deg, #6E54EC 0%, #CB52F8 40%, #FC5EFF 81%, #F1A7C5 100%);
+    cursor:pointer;
+    border:none;
+    border-radius:10px;
+}
+.parent-wrapper .child-wrapper-one .footer-left #alarm-butn:hover{
+    background-image:linear-gradient(113deg, #F1A7C5 0%, #FC5EFF 40%, #CB52F8 81%, #6E54EC 100%);
+}
+.parent-wrapper .child-wrapper-one .footer-left .set-alarm{
+    width:55%;
+    background-color:#7516e0;
+    padding:2%;
+    color:#fab4ff;
+    font-size:18px;
+    border-radius:10px;
+}
+.parent-wrapper .child-wrapper-one .footer-left .set-alarm p{
+    margin-bottom:3%;
+}
+/*Left half webpage's designing starts here*/
+/*Right half webpage's designing starts here*/
+.parent-wrapper .child-wrapper-two{
+    width:49%;
+}
+.parent-wrapper .child-wrapper-two .boxes-wrapper{
+    width:100%;
+    padding:5%;
+    background-color:white;;
+    margin:0 auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    border-radius:20px;
+}
+.parent-wrapper .child-wrapper-two .back-boxes1{
+    width:80%;
+    padding:3%;
+    background-color:white;
+    margin:0 auto;
+    border-radius:20px;
+    position:relative;
+    top:-2%;
+    opacity:0.4;
+}
+.parent-wrapper .child-wrapper-two .back-boxes2{
+    width:60%;
+    padding:4%;
+    background-color:white;
+    margin:0 auto;
+    border-radius:20px;
+    position:relative;
+    top:-6%;
+    opacity:0.2;
+}
+.parent-wrapper .child-wrapper-two .boxes-wrapper .box1{
+    width:20%;
+    background-image:url("timeline.svg");
+    font-size:20px;
+    font-weight:bolder;
+    text-align:center;
+    padding:2%;
+    color:#3D087B;
+    border-radius:10px;
+}
+.parent-wrapper .child-wrapper-two .boxes-wrapper .box2{
+    width:18%;
+    background-image:url("AM_svg.svg");
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    text-align:center;
+    padding:4%;
+    color:#fff;
+    border-radius:15px;
+}
+.parent-wrapper .child-wrapper-two .message-time{
+    width:100%;
+    background-color:white;
+    color:#3D087B;
+    padding:5%;
+    border-radius:20px;
+}
+.parent-wrapper .child-wrapper-two #message-image{
+    
+    width:100%;
+    background-color:white;
+    background-repeat:no-repeat;
+    background-size:cover;
+    padding:30%;
+    margin-top:5%;
+    border-radius:20px;
+}
+/*Right half webpage's designing ends here*/
+/*Responsive design starts here*/
+@media only screen and (max-width:1000px){
+    .parent-wrapper{
+        flex-direction:column;
+    }
+    .parent-wrapper .child-wrapper-one,
+    .parent-wrapper .child-wrapper-two{
+        width:100%;
+    }
+    .parent-wrapper .child-wrapper-one .selectors{
+        margin-top:3%;
+    }
+    .parent-wrapper .child-wrapper-one .main-logo{
+        width:90%;
+        padding:13%;
+    }
+    .parent-wrapper .child-wrapper-one .footer-left{
+        flex-direction:column;
+    }
+    .parent-wrapper .child-wrapper-one .footer-left #alarm-butn{
+        width:55%;
+        margin-bottom:3%;
+    }
+    .parent-wrapper .child-wrapper-one .footer-left .set-alarm{
+        width:100%;
+    }
+    .parent-wrapper .child-wrapper-two .boxes-wrapper{
+        font-size:10px;
+    }
+    .parent-wrapper .child-wrapper-two .boxes-wrapper .box1{
+        font-size:13px;
+    }
+    .parent-wrapper .child-wrapper-two .back-boxes1,
+    .parent-wrapper .child-wrapper-two  .back-boxes2{
+        display:none;
+    }
+    .parent-wrapper .child-wrapper-two .message-time{
+        margin-top:7%;
+    }
+    *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Bah;
+    }
+    body{
+        background-color:#3D087B;
+    }
+    @font-face{
+        font-family:Bah;
+        src:url("../fonts/BauhausRegular.ttf");
+    }
+    .parent-wrapper{
+        width:85%;
+        margin:3% auto;
+        display:flex;
+        justify-content:space-between;
+    }
+    /*Left half webpage's designing starts here*/
+    .parent-wrapper .child-wrapper-one{
+        width:49%;
+    }
+    .parent-wrapper .child-wrapper-one .main-logo{
+        width:50%;
+        padding:11%;
+        background-image:url("clock_logo.png");
+        background-repeat:no-repeat;
+        background-position:center;
+    }
+    .parent-wrapper .child-wrapper-one .selectors{
+        width:90%;
+        background-color:white;
+        margin:0 auto;
+        padding:3%;
+        border-radius:20px;
+    }
+    .parent-wrapper .child-wrapper-one .selectors .first-dropdown-wrapper{
+        width:100%;
+        display:flex;
+        justify-content:space-around;
+        font-size:20px;
+        font-weight:bolder;
+        margin-bottom:7%;
+        color:#3D087B;
+    }
+    .parent-wrapper .child-wrapper-one .selectors .first-dropdown-wrapper select{
+        width:35%;
+    }
+    .parent-wrapper .child-wrapper-one .selectors hr{
+        width:10%;
+        border:1px solid black;
+        margin-bottom:7%;
+        transform:rotate(90deg);
+        position:relative;
+        left:4%;
+    }
+    .parent-wrapper .child-wrapper-one .message{
+        width:90%;
+        padding:7%;
+        background-color:#7516e0;
+        margin:5% auto;
+        border-radius:20px;
+        color:#fab4ff;
+        font-weight:bolder;
+        font-size:25px;
+    }
+    .parent-wrapper .child-wrapper-one .footer-left{
+        width:95%;
+        margin:4% auto;
+        display:flex;
+        justify-content: space-around;
+        align-items:center;
+        padding:3%;
+    }
+    .parent-wrapper .child-wrapper-one .footer-left #alarm-butn{
+        width:40%;
+        padding:2%;
+        font-size:25px;
+        font-weight:bolder;
+        letter-spacing:1px;
+        color:white;
+        background-image:linear-gradient(113deg, #6E54EC 0%, #CB52F8 40%, #FC5EFF 81%, #F1A7C5 100%);
+        cursor:pointer;
+        border:none;
+        border-radius:10px;
+    }
+    .parent-wrapper .child-wrapper-one .footer-left #alarm-butn:hover{
+        background-image:linear-gradient(113deg, #F1A7C5 0%, #FC5EFF 40%, #CB52F8 81%, #6E54EC 100%);
+    }
+    .parent-wrapper .child-wrapper-one .footer-left .set-alarm{
+        width:55%;
+        background-color:#7516e0;
+        padding:2%;
+        color:#fab4ff;
+        font-size:18px;
+        border-radius:10px;
+    }
+    .parent-wrapper .child-wrapper-one .footer-left .set-alarm p{
+        margin-bottom:3%;
+    }
+    /*Left half webpage's designing starts here*/
+    /*Right half webpage's designing starts here*/
+    .parent-wrapper .child-wrapper-two{
+        width:49%;
+    }
+    .parent-wrapper .child-wrapper-two .boxes-wrapper{
+        width:100%;
+        padding:5%;
+        background-color:white;;
+        margin:0 auto;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+        border-radius:20px;
+    }
+    .parent-wrapper .child-wrapper-two .back-boxes1{
+        width:80%;
+        padding:3%;
+        background-color:white;
+        margin:0 auto;
+        border-radius:20px;
+        position:relative;
+        top:-2%;
+        opacity:0.4;
+    }
+    .parent-wrapper .child-wrapper-two .back-boxes2{
+        width:60%;
+        padding:4%;
+        background-color:white;
+        margin:0 auto;
+        border-radius:20px;
+        position:relative;
+        top:-6%;
+        opacity:0.2;
+    }
+    .parent-wrapper .child-wrapper-two .boxes-wrapper .box1{
+        width:20%;
+        background-image:url("timeline.svg");
+        font-size:20px;
+        font-weight:bolder;
+        text-align:center;
+        padding:2%;
+        color:#3D087B;
+        border-radius:10px;
+    }
+    .parent-wrapper .child-wrapper-two .boxes-wrapper .box2{
+        width:18%;
+        background-image:url("AM_svg.svg");
+        background-repeat:no-repeat;
+        background-position:center;
+        background-size:cover;
+        text-align:center;
+        padding:4%;
+        color:#fff;
+        border-radius:15px;
+    }
+    .parent-wrapper .child-wrapper-two .message-time{
+        width:100%;
+        background-color:white;
+        color:#3D087B;
+        padding:5%;
+        border-radius:20px;
+    }
+    .parent-wrapper .child-wrapper-two #message-image{
+        width:100%;
+        background-color:white;
+        background-repeat:no-repeat;
+        background-size:cover;
+        padding:30%;
+        margin-top:5%;
+        border-radius:20px;
+    }
+    /*Right half webpage's designing ends here*/
+    /*Responsive design starts here*/
+    @media only screen and (max-width:1000px){
+        .parent-wrapper{
+            flex-direction:column;
+        }
+        .parent-wrapper .child-wrapper-one,
+        .parent-wrapper .child-wrapper-two{
+            width:100%;
+        }
+        .parent-wrapper .child-wrapper-one .selectors{
+            margin-top:3%;
+        }
+        .parent-wrapper .child-wrapper-one .main-logo{
+            width:90%;
+            padding:13%;
+        }
+        .parent-wrapper .child-wrapper-one .footer-left{
+            flex-direction:column;
+        }
+        .parent-wrapper .child-wrapper-one .footer-left #alarm-butn{
+            width:55%;
+            margin-bottom:3%;
+        }
+        .parent-wrapper .child-wrapper-one .footer-left .set-alarm{
+            width:100%;
+        }
+        .parent-wrapper .child-wrapper-two .boxes-wrapper{
+            font-size:10px;
+        }
+        .parent-wrapper .child-wrapper-two .boxes-wrapper .box1{
+            font-size:13px;
+        }
+        .parent-wrapper .child-wrapper-two .back-boxes1,
+        .parent-wrapper .child-wrapper-two  .back-boxes2{
+            display:none;
+        }
+        .parent-wrapper .child-wrapper-two .message-time{
+            margin-top:7%;
+        }
+    }
+}
