@@ -1,108 +1,138 @@
+console.log("Working...");
+// function clock(){
+//     // let hours=document.querySelector("span.hours-digit").appendChild(h);
+//     // let minutes=document.querySelector("span.mins-digit").appendChild(m);
+//     // let seconds=document.querySelector("span.secs-digit").appendChild(s);
+//     // let meridian=document.querySelector("spa.AMPM").appendChild(meridian);
+
+
+//     //object for date method
+//     let obj=new Date();
+//     var h=obj.getHours();
+//     let m=obj.getMinutes();
+//     let s=obj.getSeconds();
+
+//     //meridian condition for AM and PM
+//     if(h==12){
+//         meridian.textContent="PM";
+//     }
+//     else if(h==24){
+//         meridian.textContent="AM";
+//     }
+//     else if(h>12){
+//         h=h-12;
+//         meridian.textContent="PM";
+//     }
+//     else{
+//         meridian.textContent="AM";
+//     }
+
+//     // hours.textContent=zeroAppend(h);
+//     // minutes.textContent=zeroAppend(m);
+//     // seconds.textContent=zeroAppend(s);
+//     let hours=document.querySelector("span.hours-digit").textContent.appendChild(h);
+//     let minutes=document.querySelector("span.mins-digit").textContent.appendChild(m);
+//     let seconds=document.querySelector("span.secs-digit").textContent.appendChild(s);
+//     let meridian=document.querySelector("span.AMPM").textContent.appendChild(meridian);
+
+// }
+// setInterval(clock,1000);
+
 function clock(){
-    let hours=document.querySelector(".child-wrapper-two .boxes-wrapper .box1 #hours");
-    let minutes=document.querySelector(".child-wrapper-two .boxes-wrapper .box1 #minutes");
-    let seconds=document.querySelector(".child-wrapper-two .boxes-wrapper .box1 #seconds");
-    let meridian=document.querySelector(".child-wrapper-two .boxes-wrapper .box2 #meridian");
+    var date = new Date();
+    var hours= date.getHours();
+    var min=date.getMinutes();
+    var sec=date.getSeconds();
+    let time="AM";
+    if(hours>12){
+        time="PM";
+    }
+    let wakeup=document.getElementsByClassName("wakeup_dropdown").value;
+let lunch=document.getElementsByClassName("lunch_dropdown").value;
+let nap=document.getElementsByClassName("nap_dropdown").value;
+let night=document.getElementsByClassName("night_dropdown").value;
+
+if(wakeup==hours){
+    document.getElementById("changeImage").style.backgroundImage = "url('MorningPic.png')";
+}
+if(lunch==hours){
+    document.getElementsByClassName("wish-text").innerHTML = "GOOD AFTERNOON !! TAKE SOME SLEEP";
+    document.getElementsByClassName("food-text").innerHTML = "LETS HAVE SOME LUNCH !!";
+    document.getElementById("changeImage").style.backgroundImage = "url('afternoon.png')";
+}
+if(nap==hours){
+    document.getElementsByClassName("wish-text").innerHTML = "GOOD EVENING !!";
+    document.getElementsByClassName("food-text").innerHTML = "STOP YAWNING , GET SOME TEA !!";
+    document.getElementById("changeImage").style.backgroundImage = "url('lunch.png')";
+}
+if(night==hours){
+    document.getElementsByClassName("wish-text").innerHTML = "GOOD NIGHT !!";
+    document.getElementsByClassName("food-text").innerHTML = "CLOSE YOUR EYES AND GO TO SLEEP !!";
+    document.getElementById("changeImage").style.backgroundImage = "url('night.png')";
+}
 
 
-    //object for date method
-    let obj=new Date();
-    var h=obj.getHours();
-    let m=obj.getMinutes();
-    let s=obj.getSeconds();
+    hours=(hours>12) ? hours-12 : hours ;
+    hours= ((hours - 12) <10 ) ? 0 + hours : hours;
+    var hrs=document.getElementsByClassName("hours-digit");
+    var mm=document.getElementsByClassName("mins-digit");
+    var ss=document.getElementsByClassName("secs-digit");
 
-    //meridian condition for AM and PM
-    if(h==12){
-        meridian.textContent="PM";
-    }
-    else if(h==24){
-        meridian.textContent="AM";
-    }
-    else if(h>12){
-        h=h-12;
-        meridian.textContent="PM";
-    }
-    else{
-        meridian.textContent="AM";
-    }
+    hrs[0].innerText = hours;
+    mm[0].innerText = min;
+    ss[0].innerText = sec;
 
-    hours.textContent=zeroAppend(h);
-    minutes.textContent=zeroAppend(m);
-    seconds.textContent=zeroAppend(s);
+    let tim=document.getElementsByClassName("AMPM");
+    tim[0].innerHTML = time ;
+
+    var t = setTimeout(function(){ clock() }, 1000); 
+    displayvalue();
+
 
 }
-setInterval(clock,1000);
 
-function zeroAppend(val){
-    if(val<10){
-        val="0"+val;
-    }
-    return val;
-}
-/* function for clock */
-/* function for alarm */
-function alarm(){
-        let morningDrop=document.querySelector("#morning-dropdown");
-        let lunchDrop=document.querySelector("#afternoon-dropdown");
-        let napDrop=document.querySelector("#nap-dropdown");
-        let nightDrop=document.querySelector("#night-dropdown");
-        let morningValue=morningDrop.options[morningDrop.selectedIndex].value;
-        let lunchValue=lunchDrop.options[lunchDrop.selectedIndex].value;
-        let napValue=napDrop.options[napDrop.selectedIndex].value;
-        let nightValue=nightDrop.options[nightDrop.selectedIndex].value;
-        
-        let hourValue=new Date().getHours();
-        let displayMor=document.querySelector("#display-morning");
-        let displayLun=document.querySelector("#display-lunch");
-        let displaynap=document.querySelector("#display-nap");
-        let displayNigh=document.querySelector("#display-night");
-
-        displayMor.textContent=morningDrop.options[morningDrop.selectedIndex].text;
-        displayLun.textContent=lunchDrop.options[lunchDrop.selectedIndex].text;
-        displaynap.textContent=napDrop.options[napDrop.selectedIndex].text;
-        displayNigh.textContent=nightDrop.options[nightDrop.selectedIndex].text;
-
-        let message=document.querySelector("#message");
-        let messageImage=document.querySelector("#message-image");
-        let alarmMessage=document.querySelector("#display-message");
-        //morning display
-        if(morningValue==hourValue){
-            message.textContent="GRAB SOME HEALTHY BREAKFAST";
-            alarmMessage.textContent="GOOD MORNING !"   
-            messageImage.style.cssText="background-image:url('morning.png')";
-        }
-
-        //afternoon display
-        if(lunchValue==hourValue){
-            message.textContent="LET'S HAVING SOME LUNCH!!";
-            alarmMessage.textContent="GOOD AFTERNOON !TAKE SOME SLEEP"   
-            messageImage.style.cssText="background-image:url('afternoon.png')"
-        }
-
-        //evening display
-        if(napValue==hourValue){
-            message.textContent="STOP YAWNING HAVE SOME TEA... IT JUST EVENING !";
-            alarmMessage.textContent="GOOD EVENING !"   
-            messageImage.style.cssText="background-image:url(lunch.png);"
-        }
-
-        //night display
-        if(nightValue==hourValue){
-            message.textContent="CLOSE YOUR EYES AND GO TO SLEEP !";
-            alarmMessage.textContent="GOOD NIGHT !"   
-            messageImage.style.cssText="background-image:url(night.png);"
-        }
-}
-/* function for alarm */
-/* function for default display */
-function def(){
-    let message=document.querySelector("#message");
-    let messageImage=document.querySelector("#message-image");
-    let alarmMessage=document.querySelector("#display-message");
+function displayvalue(){
+    let wakeup=document.getElementById("wakeup_dropdown").value;
+    let lunch=document.getElementById("lunch_dropdown").value;
+    let nap=document.getElementById("nap_dropdown").value;
+    let night=document.getElementById("night_dropdown").value;
     
-    message.textContent="GRAB SOME HEALTHY BREAK FAST";
-    alarmMessage.textContent="GOOD MORNING!!!WAKE UP!!"   
-    messageImage.style.cssText="background-image:url(morning.png);"
+
+    var wakeValue = document.getElementById("wakeup_dropdown");
+    var value1 = wakeValue.options[wakeValue.selectedIndex].text;
+
+    var lunchValue = document.getElementById("lunch_dropdown");
+    var value2 = lunchValue.options[lunchValue.selectedIndex].text;
+
+    var napValue = document.getElementById("nap_dropdown");
+    var value3 = napValue.options[napValue.selectedIndex].text;
+
+    var nightValue = document.getElementById("night_dropdown");
+    var value4 = nightValue.options[nightValue.selectedIndex].text;
+
+    if (waketime == "none") {
+        document.getElementById("waketime").innerHTML = "";
+      } else {
+        document.getElementById("waketime").innerHTML =
+          "Wake up time : " + value1;
+      }
+  
+      if (lunchtime == "none") {
+        document.getElementById("lunchtime").innerHTML = "";
+      } else {
+        document.getElementById("lunchtime").innerHTML =
+          "Lunch time : " + value2;
+      }
+  
+      if (naptime == "none") {
+        document.getElementById("naptime").innerHTML = "";
+      } else {
+        document.getElementById("naptime").innerHTML = "Nap time : " + value3;
+      }
+      if (nighttime == "none") {
+          document.getElementById("nighttime").innerHTML = "";
+        } else {
+          document.getElementById("nighttime").innerHTML = "Night Time : " + value4;
+        }
 }
-
-
+clock();
